@@ -11,6 +11,6 @@ jobs:
           path: test-results
       - run: gradle jar
       - store_artifacts:
-          path: /code/test-results
+          path: build/libs
           destination: prefix    
 
