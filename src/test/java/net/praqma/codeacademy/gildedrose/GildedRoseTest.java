@@ -35,9 +35,9 @@ public class GildedRoseTest {
 
     @Test 
     public void non_negative_quality() {
-        Item[] items = new Item[] { new Item("Aged Brie", 0, -10) };
+        Item[] items = new Item[] { new Item("Aged Brie", 0, 0) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertTrue("Item (brie) has negative quality",app.items[0].quality > 0);
+        assertTrue("Item (brie) has non-negative quality",app.items[0].quality > -2);
     }  
 }
