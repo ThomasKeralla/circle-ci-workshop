@@ -9,6 +9,7 @@ jobs:
       - run: gradle test
       - store_test_results:
           path: test-results
+      - run: gradle jar
       - store_artifacts:
           path: /code/test-results
           destination: prefix    
