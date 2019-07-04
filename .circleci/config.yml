@@ -23,7 +23,7 @@ workflows:
   two_job_flow:
     jobs:
       - job-1
-      - job-2  
+      - job-2 : 
           requires:
               - job-1
       
