@@ -18,7 +18,7 @@ public class GildedRoseTest {
         Item[] items = new Item[] { new Item("Aged Brie", 0, 1) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertTrue("brie is a higher quality",app.items[0].quality<1 );
+        assertTrue("brie is a higher quality",app.items[0].quality>1 );
         
     }
     @Test
@@ -29,4 +29,15 @@ public class GildedRoseTest {
         assertTrue("brie is higher quality than it should be able to",app.items[0].quality==50 );
         
     }
+    // Once the sell by date has passed, Quality degrades twice as fast
+
+    // The Quality of an item is never negative
+
+    @Test 
+    public void non_negative_quality() {
+        Item[] items = new Item[] { new Item("Aged Brie", 0, -1) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertTrue("Item (brie) has negative quality",app.items[0].quality < 0);
+    }  
 }
